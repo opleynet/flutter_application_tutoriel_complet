@@ -18,8 +18,15 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          //
+          leading: Icon(Icons.menu),
           title: Text("My app bar"),
+          elevation: 88,
           backgroundColor: Colors.yellow.shade200,
+          actions: [
+            IconButton(onPressed: (){}, icon: Icon(Icons.verified_user)),
+            IconButton(onPressed: (){}, icon: Icon(Icons.search)),
+          ],
         ),
         body: Row(
           mainAxisAlignment: MainAxisAlignment.center,
