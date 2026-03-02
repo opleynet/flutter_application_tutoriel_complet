@@ -60,7 +60,7 @@ class MainApp extends StatelessWidget {
             ),
             Text("row2"),
             Icon(Icons.abc_outlined),
-            
+            //Ajout de boutons ElevatedButton OutlineButon TextButton IconButton
           ],
         ),
         bottomNavigationBar: NavigationBar(
