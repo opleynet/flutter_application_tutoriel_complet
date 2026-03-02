@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 
 void main() {
   //prend un widget et et construit l'application
-  runApp(const MainApp());
+  runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  MainApp({super.key});
+
+  final List images = [
+    "https://www.pkroadparts.com/img/ybc_blog/post/5f4e012c5691d.jpg",
+    "https://www.pkroadparts.com/img/cms/blog/Aprilia%20RS%20660.jpg",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -26,20 +31,45 @@ class MainApp extends StatelessWidget {
                 Container(
                   alignment: Alignment.center,
                   padding: EdgeInsets.all(25),
-                  margin:  EdgeInsets.all(45),
+                  margin: EdgeInsets.all(45),
                   height: 300,
                   width: 500,
-                  decoration: BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.circular(25)),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(25),
+                  ),
                   child: HomePage(),
                 ),
                 Text("data"),
                 Text("data2"),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.1,
+                  height: MediaQuery.of(context).size.height * 0.2,
+                  child: ListView(
+                    children: [
+                      Image.network(
+                        "https://www.pkroadparts.com/img/ybc_blog/post/5f4e012c5691d.jpg",
+                      ),
+                      Image.network(
+                        "https://www.pkroadparts.com/img/cms/blog/Aprilia%20RS%20660.jpg",
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
             Text("row2"),
             Icon(Icons.abc_outlined),
+            
           ],
         ),
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.message), label: "Message"),
+            NavigationDestination(icon: Icon(Icons.phone), label: "Appels"),
+
+          ],
+        )
       ),
     );
   }
