@@ -18,8 +18,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          //
-          leading: Icon(Icons.menu),
+          
           title: Text("My app bar"),
           elevation: 88,
           backgroundColor: Colors.yellow.shade200,
@@ -27,6 +26,44 @@ class MainApp extends StatelessWidget {
             IconButton(onPressed: (){}, icon: Icon(Icons.verified_user)),
             IconButton(onPressed: (){}, icon: Icon(Icons.search)),
           ],
+        ),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Text("Mon menu")),
+                ListTile(
+                  //element menu clickable
+                  leading: Icon(Icons.settings),
+                  title: Text("Paramétres"),
+                  subtitle: Text("Page des paramétres"),
+                  trailing: Icon(Icons.chevron_right),
+                  onTap: (){},
+                ),
+                 ListTile(
+                  //element menu clickable
+                  leading: Icon(Icons.account_box),
+                  title: Text("Profil"),
+                  onTap: (){},
+                ),
+                 ListTile(
+                  //element menu clickable
+                  leading: Icon(Icons.help),
+                  title: Text("Aide"),
+                  onTap: (){},
+                ),
+                 ListTile(
+                  //element menu clickable
+                  leading: Icon(Icons.close),
+                  title: Text("Quitter"),
+                  onTap: (){},
+                )
+            
+            ],
+          ),
         ),
         body: Row(
           mainAxisAlignment: MainAxisAlignment.center,
